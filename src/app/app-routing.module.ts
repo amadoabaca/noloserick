@@ -8,7 +8,7 @@ import { RickComponent } from './components/rick/rick.component';
 const routes: Routes = [
   {
     path:'',
-    component: RecibeFormularioComponent
+    component: RickComponent
   },
   {
     path:'padre',
