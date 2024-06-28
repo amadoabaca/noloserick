@@ -6,13 +6,20 @@
 <button
     (click)="irA(prevPage)"
     *ngIf="prevPage">
-  Previous
+  Anterior
 </button>
 <button
     (click)="irA(nextPage)">
-  Next
+  Siguiente
 </button>
 
-<h3 *ngFor="let personaje of listaPersonajes">
-    {{personaje.name}}
-</h3>
+
+<div *ngFor="let personaje of listaPersonajes">
+  <div>
+      <img [src]="personaje.image" alt="Imagen del personaje" />
+      <p>{{personaje.name}}</p>
+  </div>
+</div>
+
+
+
