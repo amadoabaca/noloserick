@@ -12,17 +12,19 @@ export class RickComponent implements OnInit {
   listaPersonajes: any[] = [];
   nextPage: string = '';
   prevPage: string = '';
+  personajesCargados: boolean = false;
   constructor(
     private rickService: RickAndMortyService
   ) { }
 
   ngOnInit(): void {
-    this.buscoPersonajes();
+   
   }
 
   buscoPersonajes() {
     this.rickService.obtenerPersonajes().subscribe((data) => {
       this.actualizaPropiedades(data);
+      this.personajesCargados = true;
       console.log(data);
     });
   }

@@ -1,25 +1,24 @@
-<button
-    (click)="buscoPersonajes()">
+<div class="container" *ngIf="!personajesCargados">
+  <h1 class="center-title">Personajes de Rick y Morty</h1>
+  <button class="main-button" (click)="buscoPersonajes()">
     Ver Personajes
-</button>
-
-<button
-    (click)="irA(prevPage)"
-    *ngIf="prevPage">
-  Anterior
-</button>
-<button
-    (click)="irA(nextPage)">
-  Siguiente
-</button>
-
-
-<div *ngFor="let personaje of listaPersonajes">
-  <div>
-      <img [src]="personaje.image" alt="Imagen del personaje" />
-      <p>{{personaje.name}}</p>
-  </div>
+  </button>
 </div>
 
+<div class="container" *ngIf="personajesCargados">
+  <div class="button-container">
+    <button class="nav-button" (click)="irA(prevPage)" *ngIf="prevPage">
+      Anterior
+    </button>
+    <button class="nav-button" (click)="irA(nextPage)">
+      Siguiente
+    </button>
+  </div>
 
-
+  <div class="characters">
+    <div *ngFor="let personaje of listaPersonajes" class="character">
+      <img [src]="personaje.image" alt="{{personaje.name}}" />
+      <p>{{personaje.name}}</p>
+    </div>
+  </div>
+</div>
