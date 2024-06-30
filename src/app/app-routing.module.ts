@@ -1,23 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { RecibeFormularioComponent } from './components/recibe-formulario/recibe-formulario.component';
-import { PadreComponent } from './components/padre/padre.component';
 import { RickComponent } from './components/rick/rick.component';
 
 const routes: Routes = [
   {
     path:'',
     component: RickComponent
-  },
-  {
-    path:'padre',
-    component: PadreComponent
-  },
-  {
-    path:'rick',
-    component: RickComponent
   }
+  
 ];
 
 @NgModule({

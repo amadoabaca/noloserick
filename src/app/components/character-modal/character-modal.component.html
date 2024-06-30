@@ -1,0 +1,9 @@
+<div class="modal" *ngIf="isOpen">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <img [src]="character.image" alt="Imagen del personaje" />
+      <h2>{{ character.name }}</h2>
+      <p>Género: {{ character.gender }}</p>
+    </div>
+  </div>
+  

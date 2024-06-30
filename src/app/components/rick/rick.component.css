@@ -70,6 +70,10 @@
     padding: 10px;
     border-radius: 10px;
     text-align: center;
+    cursor: pointer;
+  }
+  .character:hover {
+    transform: scale(1.1);
   }
   
   .character img {
@@ -81,4 +85,3 @@
     margin: 10px 0 0;
     font-size: 17px;
   }
-  

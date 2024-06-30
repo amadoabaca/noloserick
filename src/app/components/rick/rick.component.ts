@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild  } from '@angular/core';
 import { RickAndMortyService } from '../../services/rick-and-morty.service';
+import { CharacterModalComponent } from '../character-modal/character-modal.component';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -13,6 +14,10 @@ export class RickComponent implements OnInit {
   nextPage: string = '';
   prevPage: string = '';
   personajesCargados: boolean = false;
+  selectedCharacter: any; 
+
+  @ViewChild(CharacterModalComponent, { static: false }) characterModal!: CharacterModalComponent;
+  
   constructor(
     private rickService: RickAndMortyService
   ) { }
@@ -43,5 +48,9 @@ export class RickComponent implements OnInit {
       this.prevPage = data.info.prev;
       this.prevPage = '?' + this.prevPage.split('?')[1];
     }
+  }
+  openModal(character: any) {
+    this.selectedCharacter = character;
+    this.characterModal.openModal();
   }
 }

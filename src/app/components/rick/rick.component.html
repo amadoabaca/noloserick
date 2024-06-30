@@ -15,10 +15,11 @@
     </button>
   </div>
 
-  <div class="characters">
-    <div *ngFor="let personaje of listaPersonajes" class="character">
+  <div class="characters"> 
+    <div *ngFor="let personaje of listaPersonajes" class="character" (click)="openModal(personaje)">
       <img [src]="personaje.image" alt="Imagen del personaje" />
       <p>{{personaje.name}}</p>
     </div>
   </div>
+  <app-character-modal [character]="selectedCharacter"></app-character-modal>
 </div>
